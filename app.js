@@ -15,7 +15,7 @@ server.use(bodyParser.urlencoded({extended: true}));
 
 // Page routing
 server.get('/', function(req, res){
-    console.log("Request recieved: user not logged in, sending home.html")
+    console.log("Request recieved: sending home.html")
     res.sendFile('home.html', {root: path.join(__dirname, '/public')})
   })
 
