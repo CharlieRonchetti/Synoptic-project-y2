@@ -1,3 +1,17 @@
 body{
     background: #eeeeee;
   }
+
+.input-control input {
+  border: 2px solid #eeeeee;;
+  border-radius: 4px;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control.error div {
+  color: #ff3860;
+  font-size: 12px;
+}
