@@ -15,34 +15,61 @@ server.use(bodyParser.urlencoded({extended: true}));
 
 // Page routing
 server.get('/', function(req, res){
-    console.log("Request recieved: sending home.html")
-    res.sendFile('home.html', {root: path.join(__dirname, '/public')})
+    if(logged_in){
+      console.log("Request recieved: user logged in sending home_logged_in.html")
+      res.sendFile('home_logged_in.html', {root: path.join(__dirname, '/public')})
+    } else {
+      console.log("Request recieved: sending home.html")
+      res.sendFile('home.html', {root: path.join(__dirname, '/public')})
+    }
   })
 
 server.get('/register', (req, res) => {
-console.log("Request recieved: sending register.html")
-res.sendFile('register.html', {root: path.join(__dirname, '/public')})
-})
+    console.log("Request recieved: sending register.html")
+    res.sendFile('register.html', {root: path.join(__dirname, '/public')})
+  })
 
 server.get('/login', (req, res) => {
-console.log("Request recieved: sending login.html")
-res.sendFile('login.html', {root: path.join(__dirname, '/public')})
-})
+    console.log("Request recieved: sending login.html")
+    res.sendFile('login.html', {root: path.join(__dirname, '/public')})
+  })
 
 server.get('/map', (req, res) => {
-    console.log("Request recieved: sending map.html")
-    res.sendFile('map.html', {root: path.join(__dirname, '/public')})
+    if(logged_in){
+      console.log("Request recieved: user logged in sending map_logged_in.html")
+      res.sendFile('map_logged_in.html', {root: path.join(__dirname, '/public')})
+    } else {
+      console.log("Request recieved: sending map.html")
+      res.sendFile('map.html', {root: path.join(__dirname, '/public')})
+    }
   })
   
 server.get('/statistics', (req, res) => {
-    console.log("Request recieved: sending statistics.html")
-    res.sendFile('statistics.html', {root: path.join(__dirname, '/public')})
-})
+    if(logged_in){
+      console.log("Request recieved: user logged in sending statistics_logged_in.html")
+      res.sendFile('statistics_logged_in.html', {root: path.join(__dirname, '/public')})
+    } else {
+      console.log("Request recieved: sending statistics.html")
+      res.sendFile('statistics.html', {root: path.join(__dirname, '/public')})
+    }
+  })
 
 // Load logins.JSON
 let rawdata = fs.readFileSync('accounts.json');
 var accounts_json = JSON.parse(rawdata);
 console.log("accounts.JSON loaded");
+
+// Send account data to frontend
+server.get('/accounts/json', (req, res) => {
+    res.json(accounts_json)
+  })
+
+// Logout
+server.get("/logout", (req, res) => {
+    logged_in = false;
+    console.log("Request recieved: logging user out and sending login.html")
+    res.sendFile('login.html', {root: path.join(__dirname, '/public')})
+  })
 
 // Signup form handling
 server.post('/get_register_form', function(req, res) {
