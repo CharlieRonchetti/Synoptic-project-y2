@@ -52,6 +52,38 @@
                 maxZoom: 19,
                 attribution: '© OpenStreetMap'
             }).addTo(map);
+
+            var circle_yellow = L.circle([-10.76168186334565, 142.5116605530904], {
+                color: 'yellow',
+                fillColor: '#FFFF00',
+                fillOpacity: 0.2,
+                radius: 2000
+            }).addTo(map);
+            
+
+            var circle_orange = L.circle([-10.76168186334565, 142.5116605530904], {
+                color: 'orange',
+                fillColor: '#FFA500',
+                fillOpacity: 0.2,
+                radius: 1500
+            }).addTo(map);
+            
+            
+            var circle_red = L.circle([-10.76168186334565, 142.5116605530904], {
+                color: 'red',
+                fillColor: '#ff0000',
+                fillOpacity: 0.2,
+                radius: 1000
+            }).addTo(map);
+            circle_red.bindPopup("Red weather alert: Heavy downpour expected")
+
+            var circle_yellow_2 = L.circle([-10.813580375341836, 142.43492376543102], {
+                color: 'yellow',
+                fillColor: '#FFFF00',
+                fillOpacity: 0.2,
+                radius: 4000
+            }).addTo(map);
+            circle_yellow_2.bindPopup("Amber weather alert: downpour expected")
         </script>
     </body>
 </html>
