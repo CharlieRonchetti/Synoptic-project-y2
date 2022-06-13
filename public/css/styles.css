@@ -55,6 +55,64 @@ body{
   font-size: 25px;
 }
 
+.threads{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+.row a{
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  border: solid 3px black;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-left: -15px;
+  padding: 5px;
+}
+
+.bottom{
+  display: flex;
+}
+
+.bottom p{
+  margin-right: 10px;
+}
+
+h4{
+  margin: 0;
+}
+
+textarea{
+  width: 50%;
+}
+
+.main{
+  margin: 10px;
+}
+
+button{
+  display: block;
+}
+
+.comments{
+  margin: 50px 0;
+}
+
+.bottom, .top-comment{
+  display: flex;
+  color: grey;
+}
+
+.top-comment p{
+  margin-right: 10px;
+}
+
+.comment-content{
+  margin-bottom: 25px;
+}
+
 
 
 /*--------------------------------------------------------------
