@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> Map </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/map_style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <a class="navbar-brand" href="/"><img class="brand" src="/img/waypoint-icon-19.jpg"></a>
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/"> Home </a>
+                <a class="nav-item nav-link active" href="/map"> Map </a>
+                <a class="nav-item nav-link" href="/statistics"> Stats </a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="/logout"> Logout </a>
+            </div>
+        </nav>
+        <!-- ======= Hero Section ======= -->
+        <section id="hero" class="d-flex align-items-center">
+            <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <h1>Location</h1>
+            </div>
+        </section><!-- End Hero -->
+
+        <form id="map-form">
+            <div class="location-input">
+                <label for="start"> Start Location </label>
+                <input type="integer" id="start" name="start">
+            </div>
+            <div class="location-input">
+                <label for="end"> Destination </label>
+                <input type="integer" id="end" name="end">
+            </div>
+            <input type="submit">
+        </form>
+        
+        <div id="map"></div>
+        <script>
+            //https://leafletjs.com/examples/quick-start/
+            var map = L.map('map').setView([-10.784130985427298, 142.49220021673557], 11.5);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            var circle_yellow = L.circle([-10.76168186334565, 142.5116605530904], {
+                color: 'yellow',
+                fillColor: '#FFFF00',
+                fillOpacity: 0.2,
+                radius: 2000
+            }).addTo(map);
+            
+
+            var circle_orange = L.circle([-10.76168186334565, 142.5116605530904], {
+                color: 'orange',
+                fillColor: '#FFA500',
+                fillOpacity: 0.2,
+                radius: 1500
+            }).addTo(map);
+            
+            
+            var circle_red = L.circle([-10.76168186334565, 142.5116605530904], {
+                color: 'red',
+                fillColor: '#ff0000',
+                fillOpacity: 0.2,
+                radius: 1000
+            }).addTo(map);
+            circle_red.bindPopup("Red weather alert: Heavy downpour expected")
+
+            var circle_yellow_2 = L.circle([-10.813580375341836, 142.43492376543102], {
+                color: 'yellow',
+                fillColor: '#FFFF00',
+                fillOpacity: 0.2,
+                radius: 4000
+            }).addTo(map);
+            circle_yellow_2.bindPopup("Amber weather alert: downpour expected")
+        </script>
+    </body>
+</html>
