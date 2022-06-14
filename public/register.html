@@ -8,7 +8,7 @@
     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-lg">
-            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/"><img class="brand" src="/img/waypoint-icon-19.jpg"></a>
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="/"> Home </a>
                 <a class="nav-item nav-link" href="/map"> Map </a>
@@ -40,6 +40,11 @@
             <div class="input-control">
                 <label for="password"> Password </label>
                 <input type="password" id="password" name="password">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">Do you agree to let us use your location data whilst using this app?</label>
                 <div class="error"></div>
             </div>
             <input type="submit" value="Sign-Up!">
