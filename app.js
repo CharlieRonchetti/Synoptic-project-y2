@@ -34,6 +34,16 @@ server.get('/login', (req, res) => {
     res.sendFile('login.html', {root: path.join(__dirname, '/public')})
   })
 
+  server.get('/discussion', (req, res) => {
+    if(logged_in){
+      console.log("Request recieved: user logged in sending discussion_logged_in.html")
+      res.sendFile('discussion_logged_in.html', {root: path.join(__dirname, '/public')})
+    } else {
+      console.log("Request recieved: sending discussion.html")
+      res.sendFile('discussion.html', {root: path.join(__dirname, '/public')})
+    }
+  })
+
 server.get('/map', (req, res) => {
     if(logged_in){
       console.log("Request recieved: user logged in sending map_logged_in.html")

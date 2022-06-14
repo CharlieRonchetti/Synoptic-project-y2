@@ -167,7 +167,7 @@ button{
 }
 @media (max-width: 768px) {
   #hero {
-    height: 100vh;
+    height: 20vh;
   }
   #hero h1 {
     font-size: 28px;
