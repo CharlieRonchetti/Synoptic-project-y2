@@ -5,17 +5,18 @@ function drawChart() {
     // Set Data
     var data = google.visualization.arrayToDataTable([
       ['Time', 'Temp'],
-      [50,7],[60,8],[70,8],[80,9],[90,9],[100,9],
-      [110,10],[120,11],[130,14],[140,14],[150,15]
+      ["Mon",27],["Tue",32],["Wed",31],["Thu",30],["Fri",27]
+      ,["Sat",24],["Sun",31]
       ]);
     // Set Options
     var options = {
-      title: 'Daily Weather',
-      hAxis: {title: 'Time'},
-      vAxis: {title: 'Temperature C'},
+      title: 'Weekly Forecast',
+      hAxis: {title: 'Temp °C'},
+      vAxis: {title: 'Day'},
       legend: 'none'
     };
     // Draw Chart
-    var chart = new google.visualization.LineChart(document.getElementById('graph1'));
+    var chart = new google.visualization.BarChart(document.getElementById('graph1'));
+    
     chart.draw(data, options);
     }
