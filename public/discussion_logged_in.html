@@ -5,6 +5,7 @@
         <title> Discussions </title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
+        <script src="/js/discussion_input.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-lg">
@@ -25,38 +26,15 @@
             <h1>Discussions</h1>
             </div>
         </section><!-- End Hero -->
+        
 
-        <ol>
-            <li class="row">
-                <a href="/thread">
-                    <h4 class="title">
-                        Thread 1
-                    </h4>
-                    <div class="bottom">
-                        <p class="timestamp">
-                            10/10/2020
-                        </p>
-                        <p class="comment-count">
-                            69 comments
-                        </p>
-                    </div>
-                </a>
-                
-                <a href="/thread">
-                    <h4 class="title">
-                        Thread 2
-                    </h4>
-                    <div class="bottom">
-                        <p class="timestamp">
-                            10/10/2020
-                        </p>
-                        <p class="comment-count">
-                            69 comments
-                        </p>
-                    </div>
-                </a>
-            </li>
-        </ol>
+        <label for="the-user">Username:</label>
+        <input type="text" id="the-user" placeholder="Enter Username">
+        <input type="button" id="button1" value="Enter">
+
+        <p class="output" id="output1"></p>
+
+        
 
     </body>
 </html>
