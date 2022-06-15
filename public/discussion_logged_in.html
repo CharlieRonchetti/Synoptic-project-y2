@@ -5,7 +5,6 @@
         <title> Discussions </title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
-        <script src="/js/discussion_input.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-lg">
@@ -28,13 +27,16 @@
         </section><!-- End Hero -->
         
 
-        <label for="the-user">Username:</label>
-        <input type="text" id="the-user" placeholder="Enter Username">
-        <input type="button" id="button1" value="Enter">
+        <label class="input-label" for="the-user">Username:</label>
+        <input class="user-input" type="text" id="the-user" placeholder="Enter Username">
+        <label class="input-label" for="the-comment">Comment:</label>
+        <input class="user-input" type="text" id="the-comment" placeholder="Enter Comment">
+        <input class="input-button" type="button" id="button1" value="Enter">
 
-        <p class="output" id="output1"></p>
-
-        
-
+        <div class="output">
+            <p  id="output1"></p>
+            <p  id="output2"></p>
+            <script src="/js/discussion_input.js"></script>
+        </div>
     </body>
 </html>
