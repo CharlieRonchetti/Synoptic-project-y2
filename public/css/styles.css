@@ -66,44 +66,57 @@ body{
 }
 
 
-
-
-.input-label{
-  font-weight: bold;
-  display: flex;
-  margin-left: 25%;
-  margin-bottom: 5px;
-  
+.row a{
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  border: solid 3px black;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-left: -15px;
+  padding: 5px;
 }
 
-.user-input{
-  margin-left: 25%;
-  margin-bottom: 15px;
+.bottom{
+  display: flex;
+}
+
+.bottom p{
+  margin-right: 10px;
+}
+
+h4{
+  margin: 0;
+}
+
+textarea{
   width: 50%;
 }
 
-.input-button{
+.main{
+  margin: 10px;
+}
+
+button{
+  display: block;
+}
+
+.comments{
+  margin: 50px 0;
+}
+
+.bottom, .top-comment{
   display: flex;
-  margin-left: 25%;
-  vertical-align: middle;
-  align-items: center;
+  color: grey;
 }
 
-.output{
-  border: solid 3px black;
-  border-radius: 20px;
-  padding: 5px;
-  margin-top: 10px;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  margin-left: 5px;
-  margin-right: 5px;
+.top-comment p{
+  margin-right: 10px;
 }
 
-.login-warning{
-  text-align: center;
+.comment-content{
+  margin-bottom: 25px;
 }
-
 
 
 
@@ -118,12 +131,19 @@ body{
   position: relative;
   margin-bottom: 15px;
 }
-
-#hero .container {
+#hero:before {
+  content: "";
+  background: #b8bdb5;
   position: absolute;
-  display: block;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-
+#hero .container {
+  position: relative;
+  margin-left:1%;
+}
 #hero h1 {
   margin: 0;
   font-size: 38px;
@@ -147,7 +167,7 @@ body{
 }
 @media (max-width: 768px) {
   #hero {
-    height: 20vh;
+    height: 100vh;
   }
   #hero h1 {
     font-size: 28px;
@@ -174,8 +194,8 @@ body{
 }
 
 .image{
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 1000px;
   border-radius: 20px;
 }
 
@@ -185,4 +205,25 @@ body{
   #hero {
     height: 120vh;
   }
+}
+
+/*--------------------------------------------------------------
+# Card Section
+--------------------------------------------------------------*/
+
+.card-section{
+  margin-left: 15px;
+}
+
+.card-section .blur{
+  margin-left: 15px;
+  filter: blur(3px);
+}
+
+.card-section .center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
 }
