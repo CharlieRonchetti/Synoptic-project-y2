@@ -118,19 +118,12 @@ body{
   position: relative;
   margin-bottom: 15px;
 }
-#hero:before {
-  content: "";
-  background: #b8bdb5;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+
 #hero .container {
-  position: relative;
-  margin-left:1%;
+  position: absolute;
+  display: block;
 }
+
 #hero h1 {
   margin: 0;
   font-size: 38px;
