@@ -2,6 +2,7 @@ const form = document.getElementById('register-form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
+const terms = document.getElementById('terms');
 
 var accounts;
 
@@ -43,7 +44,7 @@ function checkDuplicateData(value, field, account_json) {
                 duplicate = true;
             }
         }
-    }
+    } 
     return duplicate;
 }
 
@@ -80,7 +81,7 @@ function validateInputs(account_json) {
     let valid = true;
 
     if(usernameTrim === '') {
-        setError(username, 'Username is required')
+        setError(username, 'Username is required*')
         valid = false;
     } else if(checkDuplicateData(usernameTrim, 'username', account_json)) {
         setError(username, 'Username in use, please choose a different username')
@@ -90,20 +91,26 @@ function validateInputs(account_json) {
     }
 
     if(emailTrim === '') {
-        setError(email, 'Email is required')
+        setError(email, 'Email is required*')
         valid = false;
     } else if(checkDuplicateData(emailTrim, 'email', account_json)) {
-        setError(email, 'Email in use, please choose a different email')
+        setError(email, 'Email in use, please choose a different email*')
         valid = false;
     } else {
         setSuccess(email);
     }
 
     if(passwordTrim === '') {
-        setError(password, 'Password is required')
+        setError(password, 'Password is required*')
         valid = false;
     } else {
         setSuccess(password);
+    }
+
+    if(!terms.checked) {
+        setError(terms, 'Please accept the terms above*')
+    } else{
+        setSuccess(terms)
     }
 
     return valid;

@@ -25,6 +25,11 @@ body{
   border-radius: 4px;
 }
 
+.brand {
+  width: 50px;
+  height: 50px;
+}
+
 .content{
   padding: 10px;
 }
@@ -55,11 +60,6 @@ body{
   font-size: 25px;
 }
 
-.threads{
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
 
 .row a{
   text-decoration: none;
@@ -72,45 +72,40 @@ body{
   padding: 5px;
 }
 
-.bottom{
+.input-label{
+  font-weight: bold;
   display: flex;
+  margin-left: 25%;
+  margin-bottom: 5px;
+  
 }
 
-.bottom p{
-  margin-right: 10px;
-}
-
-h4{
-  margin: 0;
-}
-
-textarea{
+.user-input{
+  margin-left: 25%;
+  margin-bottom: 15px;
   width: 50%;
 }
 
-.main{
-  margin: 10px;
-}
-
-button{
-  display: block;
-}
-
-.comments{
-  margin: 50px 0;
-}
-
-.bottom, .top-comment{
+.input-button{
   display: flex;
-  color: grey;
+  margin-left: 25%;
+  vertical-align: middle;
+  align-items: center;
 }
 
-.top-comment p{
-  margin-right: 10px;
+.output{
+  border: solid 3px black;
+  border-radius: 20px;
+  padding: 5px;
+  margin-top: 10px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.comment-content{
-  margin-bottom: 25px;
+.login-warning{
+  text-align: center;
 }
 
 
@@ -220,5 +215,4 @@ button{
   justify-content: center;
   align-items: center;
   text-align: center;
-  
 }
