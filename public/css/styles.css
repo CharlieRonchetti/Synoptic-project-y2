@@ -209,3 +209,16 @@ button{
 .card-section{
   margin-left: 15px;
 }
+
+.card-section .blur{
+  margin-left: 15px;
+  filter: blur(3px);
+}
+
+.card-section .center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
